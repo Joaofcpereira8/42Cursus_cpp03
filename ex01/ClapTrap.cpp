@@ -12,17 +12,17 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): name("Default"), healthPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "Default Constructor called" << std::endl;
+ClapTrap::ClapTrap(): name("Default"), healthPoints(100), energyPoints(50), attackDamage(20) {
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): name(name), healthPoints(10), energyPoints(10), attackDamage(0){
-	std::cout << name << " constructor called" << std::endl;
+ClapTrap::ClapTrap(std::string name): name(name), healthPoints(100), energyPoints(50), attackDamage(20){
+	std::cout << "ClapTrap " << name << " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &bot): name(bot.name), healthPoints(bot.healthPoints),
 	energyPoints(bot.energyPoints), attackDamage(bot.attackDamage) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &botCopy) {
@@ -33,7 +33,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &botCopy) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target) {
@@ -63,4 +63,8 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	}
 	std::cout << name <<" toked "<< amount << " damage" << std::endl;
 	healthPoints = healthPoints - amount;
+}
+
+std::string	ClapTrap::getClapTrapName() {
+	return name;
 }

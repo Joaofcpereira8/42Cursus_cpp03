@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string name;
 		int healthPoints;
 		int energyPoints;
@@ -30,6 +30,7 @@ class ClapTrap {
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		std::string	getClapTrapName(void);
 };
 
 #endif //CLAPTRAP_HPP

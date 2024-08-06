@@ -11,11 +11,14 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-	ClapTrap primeiro;
-	ClapTrap segundo("Matador");
+	ClapTrap primeiro("joao");
+	ScavTrap segundo("Matador");
+	ScavTrap terceiro("Buno");
 
 	primeiro.attack("Matador");
-	segundo.beRepaired(1);
+	segundo.attack("joao");
+	segundo.attack("Buno");
 }
