@@ -16,6 +16,10 @@ int main() {
 	ClapTrap primeiro;
 	ClapTrap segundo("Matador");
 
-	primeiro.attack("Matador");
+	for (int i = 0; i < 10; i++) {
+		primeiro.attack(segundo.getTrapName());
+		segundo.takeDamage(1);
+	}
+	primeiro.attack(segundo.getTrapName());
 	segundo.beRepaired(1);
 }

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofilipe <jofilipe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 16:24:53 by jofilipe          #+#    #+#             */
-/*   Updated: 2024/08/06 16:24:54 by jofilipe         ###   ########.fr       */
+/*   Created: 2024/08/06 14:56:16 by jofilipe          #+#    #+#             */
+/*   Updated: 2024/08/06 14:56:17 by jofilipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap: public ClapTrap{
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap& bot);
-		ScavTrap& operator=(const ScavTrap& botCopy);
-		~ScavTrap();
+int main() {
+	ClapTrap primeiro("joao");
+	ScavTrap segundo("Matador");
+	FragTrap terceiro("Buno");
 
-		void	attack(const std::string& target);
-		void	guardGate();
-};
-
-#endif //SCAVTRAP_HPP
+	primeiro.attack(segundo.getTrapName());
+	segundo.takeDamage(primeiro.getAttackDamage());
+	primeiro.beRepaired(5);
+	segundo.guardGate();
+//	for (int i = 0; i < 101; i++)
+//		primeiro.attack(terceiro.getTrapName());
+	terceiro.highFivesGuys();
+	terceiro.takeDamage(110);
+}

@@ -20,7 +20,7 @@ ScavTrap::ScavTrap() {
 	attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string nameScav) : ClapTrap(nameScav) {
+ScavTrap::ScavTrap(std::string nameScav): ClapTrap(nameScav) {
 	healthPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;

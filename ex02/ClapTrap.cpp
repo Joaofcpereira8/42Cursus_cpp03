@@ -13,20 +13,20 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): name("Default"), healthPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "Constructor Default called" << std::endl;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), healthPoints(10), energyPoints(10), attackDamage(0){
-	std::cout << name << " constructor called" << std::endl;
+	std::cout << "ClapTrap " << name << " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &bot): name(bot.name), healthPoints(bot.healthPoints),
 	energyPoints(bot.energyPoints), attackDamage(bot.attackDamage) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &botCopy) {
-	std::cout << "Copy operator called" << std::endl;
+	std::cout << "ClapTrap Copy operator called" << std::endl;
 	if (this != &botCopy) {
 		this->name = botCopy.name;
 		this->healthPoints = botCopy.healthPoints;
@@ -37,7 +37,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &botCopy) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap " << name << " destructor called" << std::endl;
+	std::cout << "ClapTrap "<< name << " destructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target) {
@@ -55,11 +55,11 @@ void	ClapTrap::attack(const std::string &target) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (energyPoints == 0) {
-		std::cout << name << " doesn't have energy points! " << std::endl;
+		std::cout << "ClapTrap " << name << " doesn't have energy points! " << std::endl;
 		return ;
 	}
 	else if (healthPoints == 0) {
-		std::cout << name << " doesn't have health points! " << std::endl;
+		std::cout << "ClapTrap " << name << " doesn't have health points! " << std::endl;
 		return ;
 	}
 	std::cout << name << " healed himself " << amount << " point(s)" << std::endl;

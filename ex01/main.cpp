@@ -18,7 +18,13 @@ int main() {
 	ScavTrap segundo("Matador");
 	ScavTrap terceiro("Buno");
 
-	primeiro.attack("Matador");
-	segundo.attack("joao");
-	segundo.attack("Buno");
+	primeiro.attack(segundo.getTrapName());
+	segundo.takeDamage(primeiro.getAttackDamage());
+	for (int i = 0; i < 51; i++) {
+		segundo.attack("joao");
+		primeiro.takeDamage(20);
+	}
+	primeiro.beRepaired(5);
+	terceiro.attack("Matador");
+	terceiro.guardGate();
 }

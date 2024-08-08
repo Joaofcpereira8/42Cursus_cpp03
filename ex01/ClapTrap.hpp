@@ -30,7 +30,8 @@ class ClapTrap {
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		std::string	getClapTrapName(void);
+		std::string	getTrapName(void);
+		int	getAttackDamage(void);
 };
 
 #endif //CLAPTRAP_HPP
